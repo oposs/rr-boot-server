@@ -63,7 +63,7 @@ You can also package the application as a nice tar.gz file, it uses carton to
 install dependent module. If you want to make sure that your project builds with perl
 5.22, make sure to set the `PERL` environment variable to a perl 5.22
 interpreter, make sure to delete any `PERL5LIB` environment variable, and run
-`make clean && make`. This will cause a `cpanfile-5.22.1.snapshot` file to be included
+`make clean && make`. This will cause a `cpanfile-5.22.snapshot` file to be included
 with your tar ball, when building the app this snapshot will be used to make sure
 all the right versions of the dependent modules get installed.
 
