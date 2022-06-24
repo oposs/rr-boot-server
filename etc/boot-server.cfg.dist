@@ -1,0 +1,5 @@
+{
+  secrets => ['some-secret'],
+  dataRoot => '/var/opt/thinRoot-data',
+  bootServer => 'http://boot-serve.exampl.com:3833',
+}
