@@ -21,7 +21,7 @@ jobs:
         run: make dist
 
       - name: Upload artefact
-      - uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: dist-packages
           path: boot-server-*.tar.gz
