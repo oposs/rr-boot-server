@@ -8,11 +8,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DEBIAN_FRONTEND: noninteractive
     steps:
       - uses: actions/checkout@v2
 
       - name: Install packages requries for building
-        run: DEBIAN_FRONTEND=noninteractive apt install -y autotools-dev autoconf gettext build-essential
+        run: sudo apt install -y autotools-dev autoconf gettext build-essential
 
       - name: Bootstrap
         run: ./bootstrap
