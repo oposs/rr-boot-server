@@ -25,8 +25,8 @@ jobs:
       - name: Make dist
         run: make dist
 
-      - name: Upload artefact
-        uses: actions/upload-artifact@v3
+      - name: Upload release artifact
+        uses: softprops/action-gh-release@v1
         with:
-          name: dist-packages
-          path: boot-server-*.tar.gz
+          files: |
+            boot-server-*.tar.gz
