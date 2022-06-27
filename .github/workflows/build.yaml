@@ -18,6 +18,9 @@ jobs:
 
       - name: Bootstrap
         run: ./bootstrap
+        
+      - name: Configure
+        run: ./configure
 
       - name: Make dist
         run: make dist
