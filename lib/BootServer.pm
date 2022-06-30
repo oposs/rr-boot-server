@@ -17,7 +17,7 @@ sub startup {
     # Configure the application
     $self->secrets($self->cfg->{secrets});
     # Router
-    $self->helper( getDir => sub ($c,$name,$new) {
+    $self->helper( getDir => sub ($c,$name,$new=0) {
         my $ip = $c->param('mac') || $c->tx->remote_address;
         my $root = $self->cfg->{dataRoot};
         my $dst = $root.'/'.$name;
@@ -52,7 +52,7 @@ CFG_END
             }
             close $tar;
             return $?;
-        }, sub ($sp, $err, $data) {
+        }, sub ($sp, $err) {
             if ($err) {
                 $c->log->error($err);
                 $c->render( status => 500, text => $err);
