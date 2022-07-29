@@ -67,7 +67,8 @@ CFG_END
     $r->post('/home.pkg' => sub ($c) {
         return $c->render(text => 'File is too big.', status => 500)
             if $c->req->is_limit_exceeded;
-        return $c->render(text => 'Expected an upload in data.', status => 500)     if ref $c->param('data') ne 'Mojo::Upload';
+        return $c->render(text => 'Expected an upload in data.', status => 500)
+            if ref $c->param('data') ne 'Mojo::Upload';
         my $dir = $c->getDir('home',1);
         $c->log->debug("Receiving Update");
         my $data = $c->param('data');
