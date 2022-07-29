@@ -74,7 +74,7 @@ CFG_END
         my $data = $c->param('data');
         Mojo::IOLoop->subprocess( sub ($sp) {
             mkdir $dir if not -d $dir;
-            open my $tar, '|-', 'tar','-C',$dir,'-zxf','-' 
+            open my $tar, '|-', 'tar','-C',$dir,'--warning=no-timestamp','-zxf','-' 
                 // die "Problem with tar $!";
             print $tar $data->slurp;
             close($tar);
