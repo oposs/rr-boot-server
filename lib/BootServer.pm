@@ -52,7 +52,7 @@ CFG_END
             }
             close $tar;
             return $?;
-        }, sub ($sp, $err) {
+        }, sub ($sp, $err, @results) {
             if ($err) {
                 $c->log->error($err);
                 $c->render( status => 500, text => $err);
@@ -79,7 +79,7 @@ CFG_END
             close($tar);
             return $?;
         },
-        sub ($sp, $err, @data) {
+        sub ($sp, $err, @results) {
             if ($err) {
                 $c->log->error($err);
                 $c->render( status => 500, text => $err);
